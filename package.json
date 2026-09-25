@@ -1,0 +1,41 @@
+{
+  "name": "gameren",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "cap": "node -r ./scripts/fix-tslib.cjs node_modules/@capacitor/cli/bin/capacitor",
+    "android:sync": "npm run build && npm run cap -- sync android",
+    "android:apk": "npm run android:sync && cd android && JAVA_HOME=\"/Applications/Android Studio.app/Contents/jbr/Contents/Home\" ANDROID_HOME=\"$HOME/Library/Android/sdk\" ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/app": "^8.1.1",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/status-bar": "^8.0.3",
+    "@lucky-canvas/react": "^0.1.13",
+    "@react-three/fiber": "^9.8.0",
+    "canvas-confetti": "^1.9.4",
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-countup": "^6.5.3",
+    "react-dom": "19.2.8",
+    "three": "^0.186.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "@tailwindcss/postcss": "^4",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.186.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
